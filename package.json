@@ -1,0 +1,75 @@
+{
+  "name": "@mdx.do/db",
+  "version": "0.1.0",
+  "description": "MDX-based database with JSON-LD support and vector search capabilities",
+  "type": "module",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "files": [
+    "dist",
+    "README.md",
+    "LICENSE"
+  ],
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js"
+    },
+    "./fs": {
+      "types": "./dist/fs/index.d.ts",
+      "import": "./dist/fs/index.js"
+    }
+  },
+  "scripts": {
+    "build": "tsc",
+    "test": "vitest",
+    "test:coverage": "vitest run --coverage",
+    "test:ui": "vitest --ui",
+    "test:run": "vitest run",
+    "debug": "DEBUG=mdxdb:* npm run test",
+    "prepublishOnly": "npm run build",
+    "clean": "rm -rf dist"
+  },
+  "dependencies": {
+    "@ai-sdk/openai": "^1.0.0",
+    "@mdx.do/mdx": "^0.1.0",
+    "ai": "^2.0.0",
+    "debug": "^4.3.4",
+    "mdast-util-from-markdown": "^2.0.0",
+    "mdast-util-mdx": "^3.0.0",
+    "micromark-extension-mdxjs": "^2.0.0"
+  },
+  "devDependencies": {
+    "@types/debug": "^4.1.12",
+    "@types/node": "^20.0.0",
+    "@vitest/coverage-v8": "^1.0.0",
+    "@vitest/ui": "^1.0.0",
+    "typescript": "^5.0.0",
+    "vitest": "^1.0.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/drivly/mdx.do.git"
+  },
+  "homepage": "https://mdx.do",
+  "bugs": {
+    "url": "https://github.com/drivly/mdx.do/issues"
+  },
+  "keywords": [
+    "mdx",
+    "database",
+    "json-ld",
+    "vector-search",
+    "semantic-search",
+    "embeddings",
+    "typescript"
+  ],
+  "author": "MDX.do",
+  "license": "MIT",
+  "engines": {
+    "node": ">=18"
+  },
+  "publishConfig": {
+    "access": "public"
+  }
+}
